@@ -4268,3 +4268,338 @@ function flipStack() {
 ```
 
 **设计要点**：filter: brightness(0.3) grayscale(0.3) 让人物退后成氛围，文字成为焦点
+
+---
+
+## 22. 横向时间线卡片 — 彩色大标题变体（4种）
+
+适用场景：步骤列表、流程展示、阶段说明。基于横向时间线布局，标题放大+彩色。
+
+---
+
+### 22A. 彩色大标题 + 手写小编号
+
+```css
+.tl-v1 .tc .num { font-family: 'Caveat', cursive; font-size: 1rem; color: var(--ink-faint); margin-bottom: 4px; }
+.tl-v1 .tc h3 { font-family: 'Noto Serif SC', serif; font-size: 1.4rem; font-weight: 900; margin-bottom: 8px; }
+.tl-v1 .tc:nth-child(1) h3 { color: var(--blue); }
+.tl-v1 .tc:nth-child(2) h3 { color: var(--red); }
+.tl-v1 .tc:nth-child(3) h3 { color: #805AD5; }
+.tl-v1 .tc:nth-child(4) h3 { color: var(--blue-deep); }
+.tl-v1 .tc p { font-size: .9rem; color: var(--ink-light); line-height: 1.6; }
+```
+
+---
+
+### 22B. 彩色高亮底居中大标题
+
+```css
+.tl-v2 .tc { text-align: center; padding: 28px 18px; }
+.tl-v2 .tc h3 { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; font-weight: 900; display: inline; }
+.tl-v2 .tc:nth-child(1) h3 { background: linear-gradient(180deg, transparent 55%, rgba(43,127,216,.15) 55%); }
+.tl-v2 .tc:nth-child(2) h3 { background: linear-gradient(180deg, transparent 55%, rgba(244,215,88,.3) 55%); }
+.tl-v2 .tc:nth-child(3) h3 { background: linear-gradient(180deg, transparent 55%, rgba(232,74,95,.15) 55%); }
+.tl-v2 .tc:nth-child(4) h3 { background: linear-gradient(180deg, transparent 55%, rgba(128,90,213,.15) 55%); }
+.tl-v2 .tc p { font-size: .88rem; color: var(--ink-light); line-height: 1.6; margin-top: 10px; }
+```
+
+---
+
+### 22C. Emoji图标 + 彩色大标题
+
+```css
+.tl-v3 .tc { padding: 26px 20px; }
+.tl-v3 .tc .emoji { font-size: 2rem; margin-bottom: 10px; }
+.tl-v3 .tc h3 { font-family: 'Noto Serif SC', serif; font-size: 1.35rem; font-weight: 900; margin-bottom: 8px; }
+.tl-v3 .tc:nth-child(1) h3 { color: var(--blue); }
+.tl-v3 .tc:nth-child(2) h3 { color: #d4930a; }
+.tl-v3 .tc:nth-child(3) h3 { color: var(--red); }
+.tl-v3 .tc:nth-child(4) h3 { color: #805AD5; }
+.tl-v3 .tc p { font-size: .9rem; color: var(--ink-light); line-height: 1.6; }
+```
+
+---
+
+### 22D. 大背景装饰字 + 彩色超大标题
+
+```css
+.tl-v5 .tc { padding: 28px 20px; position: relative; overflow: hidden; }
+.tl-v5 .tc .bg-char { position: absolute; top: -10px; right: -5px; font-family: 'Fraunces', serif; font-size: 5rem; font-weight: 900; opacity: .04; line-height: 1; pointer-events: none; }
+.tl-v5 .tc h3 { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; position: relative; }
+.tl-v5 .tc:nth-child(1) h3 { color: var(--blue); }
+.tl-v5 .tc:nth-child(2) h3 { color: var(--red); }
+.tl-v5 .tc:nth-child(3) h3 { color: #805AD5; }
+.tl-v5 .tc:nth-child(4) h3 { color: var(--blue-deep); }
+.tl-v5 .tc p { font-size: .95rem; color: var(--ink-light); line-height: 1.6; position: relative; font-weight: 500; }
+```
+
+---
+
+## 23. 圆形步骤卡片（环形循环）
+
+适用场景：周转流程、闭环循环、迭代过程。强调"转起来"的感觉。
+
+```css
+.ring-steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; max-width: 800px; margin: 0 auto; }
+.ring-step { background: white; border-radius: 50%; width: 140px; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.04); position: relative; text-align: center; }
+.ring-step .emoji { font-size: 1.5rem; margin-bottom: 4px; }
+.ring-step h4 { font-size: .9rem; font-weight: 700; }
+.ring-step .sub { font-size: .72rem; color: var(--ink-faint); }
+.ring-step::after { content: '›'; position: absolute; right: -8px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; color: var(--yellow); font-weight: 900; }
+.ring-step:last-child::after { content: '⟳'; right: auto; left: 50%; top: auto; bottom: -18px; transform: translateX(-50%); font-size: 1.1rem; color: var(--blue); }
+```
+
+⚠️ 注意：移动端变竖排，去掉箭头。3-6个步骤最佳。底部加一句大字总结效果更好。
+
+---
+
+## 24. 用户签名档 / Tagline
+
+Esther不二 的固定签名档（用于footer、文章结尾、个人介绍）：
+
+```
+▪️在AI时代认真生活的女生
+▪️跟Agent搭档的第1年
+```
+
+不要再用旧版「AI时代的个人品牌实验 · 用AI让生活变好」。
+
+---
+
+## 25. Sparkles Text（星光文字）
+
+**适用**: 标题高亮、成就展示、情绪表达。文字周围飘闪烁星星粒子。
+
+**颜色规则**：文字颜色和星光颜色互斥。蓝色文字配黄色+少量红色星光；黑色文字配黄色星光；黄色文字配蓝色星光。星光中红色占比不超过20%。
+
+```html
+<div class="sparkles-wrap" data-sparkle-colors="#F4D758,#F4D758,#E84A5F">
+  <span class="sparkles-text">Build</span>
+</div>
+```
+
+```css
+.sparkles-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+}
+.sparkles-text {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--blue); /* 或var(--ink)，与星光互斥 */
+  position: relative;
+  z-index: 1;
+}
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  animation: sparkle-anim 0.8s ease-in-out infinite;
+}
+@keyframes sparkle-anim {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(75deg); }
+  50% { opacity: 1; transform: scale(1) rotate(120deg); }
+}
+```
+
+```js
+// 星光生成（放在页面底部）
+document.querySelectorAll('[data-sparkle-colors]').forEach(el => {
+  const colors = el.dataset.sparkleColors.split(',');
+  for (let i = 0; i < 8; i++) {
+    const s = document.createElement('span');
+    s.className = 'sparkle';
+    s.style.left = Math.random()*100+'%';
+    s.style.top = Math.random()*100+'%';
+    s.style.animationDelay = (Math.random()*2)+'s';
+    s.style.animationDuration = (0.6+Math.random()*0.6)+'s';
+    const size = 12+Math.random()*16;
+    const color = colors[Math.floor(Math.random()*colors.length)];
+    s.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 21 21"><path d="M9.82531 0.843845C10.0553 0.215178 10.9446 0.215178 11.1746 0.843845L11.8618 2.72026C12.4006 4.19229 12.3916 6.39157 13.5 7.5C14.6084 8.60843 16.8077 8.59935 18.2797 9.13822L20.1561 9.82534C20.7858 10.0553 20.7858 10.9447 20.1561 11.1747L18.2797 11.8618C16.8077 12.4007 14.6084 12.3916 13.5 13.5C12.3916 14.6084 12.4006 16.8077 11.8618 18.2798L11.1746 20.1562C10.9446 20.7858 10.0553 20.7858 9.82531 20.1562L9.13819 18.2798C8.59932 16.8077 8.60843 14.6084 7.5 13.5C6.39157 12.3916 4.19225 12.4007 2.72023 11.8618L0.843814 11.1747C0.215148 10.9447 0.215148 10.0553 0.843814 9.82534L2.72023 9.13822C4.19225 8.59935 6.39157 8.60843 7.5 7.5C8.60843 6.39157 8.59932 4.19229 9.13819 2.72026L9.82531 0.843845Z" fill="${color}"/></svg>`;
+    el.appendChild(s);
+  }
+  setInterval(() => {
+    el.querySelectorAll('.sparkle').forEach(sp => {
+      sp.style.left = Math.random()*100+'%';
+      sp.style.top = Math.random()*100+'%';
+    });
+  }, 3000);
+});
+```
+
+⚠️ 注意：星光数量8-12个为佳，太多会乱。文字必须有position:relative和z-index:1确保在星光上方。
+
+---
+
+## 26. Morphing Text（文字变形）
+
+**适用**: Hero区关键词轮播、slogan切换。利用SVG滤镜产生液态融合变形效果。
+
+```html
+<!-- 必须在页面某处放置SVG滤镜 -->
+<svg style="height:0;width:0;position:fixed;">
+  <defs>
+    <filter id="threshold">
+      <feColorMatrix in="SourceGraphic" type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="morph-container" data-morph-texts="Agent时代,定制工具,对话开发,一键上线">
+  <span class="morph-text" id="morph-1"></span>
+  <span class="morph-text" id="morph-2"></span>
+</div>
+```
+
+```css
+.morph-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: clamp(80px, 12vw, 140px);
+  text-align: center;
+  filter: url(#threshold) blur(0.6px);
+}
+.morph-text {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 6rem);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+```
+
+```js
+// Morphing Text动画
+(function() {
+  const morphTime = 1.5, cooldownTime = 0.5;
+  document.querySelectorAll('[data-morph-texts]').forEach(container => {
+    const texts = container.dataset.morphTexts.split(',');
+    const [t1, t2] = container.querySelectorAll('.morph-text');
+    let idx = 0, morph = 0, cooldown = cooldownTime, time = new Date();
+    function setStyles(f) {
+      t2.style.filter = `blur(${Math.min(8/f-8,100)}px)`;
+      t2.style.opacity = `${Math.pow(f,0.4)*100}%`;
+      const inv = 1-f;
+      t1.style.filter = `blur(${Math.min(8/inv-8,100)}px)`;
+      t1.style.opacity = `${Math.pow(inv,0.4)*100}%`;
+      t1.textContent = texts[idx % texts.length];
+      t2.textContent = texts[(idx+1) % texts.length];
+    }
+    function animate() {
+      requestAnimationFrame(animate);
+      const now = new Date(), dt = (now-time)/1000; time = now;
+      cooldown -= dt;
+      if (cooldown <= 0) {
+        morph -= cooldown; cooldown = 0;
+        let f = morph/morphTime;
+        if (f > 1) { cooldown = cooldownTime; f = 1; }
+        setStyles(f);
+        if (f === 1) idx++;
+      } else {
+        morph = 0;
+        t2.style.filter = 'none'; t2.style.opacity = '100%';
+        t1.style.filter = 'none'; t1.style.opacity = '0%';
+      }
+    }
+    t1.textContent = texts[0]; t2.textContent = texts[1]; animate();
+  });
+})();
+```
+
+⚠️ 注意：SVG滤镜必须在页面中存在一次。文字数组3-5个词为佳。容器高度要够大，否则文字会溢出。
+
+---
+
+## 27. Cool Mode（点击粒子爆发）
+
+**适用**: CTA按钮、庆祝时刻、互动彩蛋。点击/长按元素时喷射彩色粒子。
+
+**颜色规则**：粒子以黄色+蓝色为主（各约40%），红色少量（约20%）。不出现红色按钮。
+
+```html
+<button class="cool-btn cool-btn-blue" data-cool="true">点我试试 ✨</button>
+<button class="cool-btn cool-btn-yellow" data-cool="true">Click Me</button>
+<button class="cool-btn cool-btn-outline" data-cool="true">Subscribe</button>
+```
+
+```css
+.cool-btn {
+  position: relative; cursor: pointer;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  padding: 16px 32px; border-radius: 12px;
+  border: none; transition: all 0.2s;
+}
+.cool-btn-blue { background: var(--blue); color: #fff; }
+.cool-btn-blue:hover { background: #1E5BA8; transform: translateY(-2px); }
+.cool-btn-yellow { background: var(--yellow); color: var(--ink); }
+.cool-btn-yellow:hover { background: #e6c840; transform: translateY(-2px); }
+.cool-btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.cool-btn-outline:hover { background: var(--ink); color: var(--cream); transform: translateY(-2px); }
+.cool-btn-pill { background: var(--cream-dark); color: var(--blue); border: 1.5px solid var(--blue); border-radius: 999px; padding: 14px 28px; }
+.cool-btn-pill:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+
+/* 粒子容器（自动创建） */
+#_coolMode_effect { overflow:hidden; position:fixed; inset:0; pointer-events:none; z-index:2147483647; }
+```
+
+```js
+// Cool Mode粒子效果
+(function() {
+  const colors = ['#2B7FD8','#2B7FD8','#F4D758','#F4D758','#F4D758','#E84A5F'];
+  const sizes = [12,16,20,28,36];
+  let particles = [], container, animating = false;
+  function getContainer() {
+    if (container) return container;
+    container = document.createElement('div');
+    container.id = '_coolMode_effect';
+    document.body.appendChild(container);
+    return container;
+  }
+  function gen(x, y) {
+    const size = sizes[Math.floor(Math.random()*sizes.length)];
+    const el = document.createElement('div');
+    const color = colors[Math.floor(Math.random()*colors.length)];
+    el.innerHTML = `<svg width="${size}" height="${size}"><circle cx="${size/2}" cy="${size/2}" r="${size/2}" fill="${color}"/></svg>`;
+    el.style.cssText = 'position:absolute;pointer-events:none;';
+    const left = x-size/2, top = y-size/2;
+    el.style.transform = `translate3d(${left}px,${top}px,0)`;
+    getContainer().appendChild(el);
+    particles.push({el,left,top,size,speedHorz:Math.random()*10,speedUp:Math.random()*25+5,direction:Math.random()<.5?-1:1,spin:Math.random()*360,spinSpd:(Math.random()*35)*(Math.random()<.5?-1:1)});
+  }
+  function refresh() {
+    particles = particles.filter(p => {
+      p.left -= p.speedHorz*p.direction; p.top -= p.speedUp;
+      p.speedUp = Math.min(p.size, p.speedUp-1); p.spin += p.spinSpd;
+      if (p.top >= window.innerHeight+p.size) { p.el.remove(); return false; }
+      p.el.style.transform = `translate3d(${p.left}px,${p.top}px,0) rotate(${p.spin}deg)`;
+      return true;
+    });
+  }
+  function loop() { refresh(); if (particles.length>0||animating) requestAnimationFrame(loop); }
+  document.querySelectorAll('[data-cool]').forEach(btn => {
+    let iv;
+    const start = e => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX||r.left+r.width/2, y = e.clientY||r.top+r.height/2;
+      for(let i=0;i<5;i++) gen(x,y);
+      iv = setInterval(()=>{if(particles.length<35) gen(x+(Math.random()-.5)*40, y+(Math.random()-.5)*20);},40);
+      if(!animating){animating=true;loop();}
+    };
+    const stop = ()=>{clearInterval(iv);setTimeout(()=>{if(!particles.length)animating=false;},2000);};
+    btn.addEventListener('mousedown',start);
+    btn.addEventListener('mouseup',stop);
+    btn.addEventListener('mouseleave',stop);
+  });
+})();
+```
+
+⚠️ 注意：粒子上限35个，超过不再生成。按钮不要用红色背景。粒子容器自动创建fixed全屏覆盖层。
