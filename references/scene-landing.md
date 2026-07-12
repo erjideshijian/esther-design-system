@@ -27,8 +27,8 @@
 ### 暗色面板色值
 - 标准暗底: `#151821`
 - 深色底: `#0d1117`
-- 品牌蓝底: `var(--blue)` + 白字
-- 品牌黄底: `var(--yellow)` + 墨色字
+- 品牌蓝底: `var(--primary)` + 白字
+- 品牌黄底: `var(--accent)` + 墨色字
 
 ---
 
@@ -83,7 +83,7 @@ Landing页面高频使用的组件：
   align-items: center;
   gap: 8px;
   padding: 16px 36px;
-  background: var(--blue, #2B7FD8);
+  background: var(--primary, #2D5A3D);
   color: #fff;
   border-radius: 12px;
   text-decoration: none;
@@ -98,7 +98,7 @@ Landing页面高频使用的组件：
 
 /* 黄色变体（用于深色背景上） */
 .cta-button--yellow {
-  background: var(--yellow, #F4D758);
+  background: var(--accent, #E8C99B);
   color: var(--ink, #1A1A2E);
 }
 .cta-button--yellow:hover {

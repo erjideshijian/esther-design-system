@@ -1,78 +1,22 @@
-# Personal Design Skill
+# 🍃 莉亚学ai · 个人品牌设计系统
 
-一套给 AI 看的个人品牌设计系统。
+一套给 AI 看的个人品牌设计系统，基于「森林墨（Forest Ink）」暖调知性风格。
 
 把审美写成操作手册，AI 每次帮你做页面时必须翻这本手册，不能自由发挥。**限制 AI 的自由度 = 保证输出质量。**
 
-> ⚠️ **使用前请先完成 `brand-dna.md` 的配置：** 默认品牌色可直接使用，如需替换成你自己的请同步修改模板变量；并放入你自己的头像。
+> ⚠️ **使用前请先确认配置：** 品牌色已配置为森林墨配色。放入你自己的头像到 `assets/avatar.jpg` 即可开始使用。
 
 ---
 
-## Demo
+## 🎨 品牌 DNA
 
-用这套系统生成的真实页面：
+| 色名 | 色值 | 作用 |
+|------|------|------|
+| 🌲 森林绿 — 主色 | `#2D5A3D` | 标题、链接、重点标记（60%） |
+| 🌟 暖金色 — 强调色 | `#E8C99B` | 装饰、badges、高亮（30%） |
+| 🍅 陶土红 — 点缀色 | `#C4716B` | CTA、标签、小面积亮点（10%） |
 
-### 📖 教程型 - 分享会页面
-
-信息清晰、步骤明确、有节奏的单页科普/教程。
-
-🔗 [在线预览](https://esthersjw.github.io/cola-ob-sharing/cola-ob-sharing.html)
-
----
-
-### 📖 教程型 - Design Skill 拆解
-
-把审美写成操作手册——从纠正AI到做出自己的Design Skill的完整过程。
-
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/demo-readme-tutorial.html)
-
----
-
-### 🎪 活动页 / Landing
-
-视觉冲击、深浅面板交替、强节奏感的活动邀请页。
-
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/demo-landing.html)
-
----
-
-### 📱 App 型 / 功能型
-
-功能优先、交互感、信息密度高的应用型页面。
-
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/demo-app.html)
-
----
-
-### 📕 小红书图文卡片
-
-3:4 比例、字大、手机可读、一键导出 PNG 的图文卡片。
-
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/demo-cards.html)
-
----
-
-### 📱 公众号排版
-
-杂志编号风：全内联样式 + section 标签，复制粘贴进微信公众号编辑器即可。
-
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/assets/demo-wechat.html)
-
----
-
-### 📜 布局 Playground
-
-16种经过验证的布局模式一览。
-
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/demo-layouts.html)
-
----
-
-### 🧩 组件库全览
-
-51个经过验证的可复用组件。
-
-🔗 [组件库预览](https://esthersjw.github.io/esther-design-system/components-preview.html)
+**气质**: 温暖知性 · 森林感 · 学习陪伴 · 不像 AI · 简洁有细节
 
 ---
 
@@ -138,13 +82,13 @@ AI 每次做设计必须按这个顺序走：
 
 ## 品牌基因速览
 
-### 三色（默认配色，可在brand-dna.md中替换为你自己的）
+### 三色（森林墨 Forest Ink）
 
 | 颜色 | 色值 | 比例 |
 |------|------|------|
-| 主色 | `#2B7FD8` | 60% |
-| 强调色 | `#F4D758` | 30% |
-| 点缀色 | `#E84A5F` | 10% |
+| 主色 | `#2D5A3D` | 60% |
+| 强调色 | `#E8C99B` | 30% |
+| 点缀色 | `#C4716B` | 10% |
 
 ### 字体
 
@@ -156,9 +100,9 @@ AI 每次做设计必须按这个顺序走：
 | 手写/注释 | Caveat |
 | 代码/终端 | Fira Code |
 
-### 气质关键词（请根据你的品牌调性修改）
+### 气质关键词
 
-可爱但有品质 · 手绘蜡笔感 · 有温度 · **不像 AI** · 一看就是你的
+温暖知性 · 森林感 · 学习陪伴 · **不像 AI** · 简洁有细节 · 一看就是「莉亚学ai」
 
 ### 禁忌
 
@@ -184,11 +128,10 @@ AI 每次做设计必须按这个顺序走：
 
 ## 怎么用
 
-1. Fork 或克隆本仓库
+1. 克隆本仓库
 2. 放入你的头像 `assets/avatar.jpg`
-3. （可选）打开 `brand-dna.md`，把默认品牌色替换成你自己的，并同步修改 `assets/template-*.html` 里 `:root` 的变量。注意：公众号模板（`template-wechat.html`）全部是内联样式，没有 CSS 变量，需要手动搜索替换色值。快捷方法：在所有模板文件中搜索 `#2B7FD8` 替换为你的主色，`#F4D758` 替换为你的强调色，`#E84A5F` 替换为你的点缀色
-4. 把 `assets/template-cards.html` 中的作者名替换成你自己的
-5. 把仓库链接发给你的 AI Agent，跟它说：
+3. 把 `assets/template-cards.html` 中的作者名替换成你自己的
+4. 把仓库链接发给你的 AI Agent，跟它说：
 
 > 帮我读这个设计系统，以后做页面按这个规范来。
 
@@ -196,10 +139,17 @@ AI 每次做设计必须按这个顺序走：
 
 ---
 
+## 继承说明
+
+本仓库 fork 自 [esthersjw/esther-design-system](https://github.com/esthersjw/esther-design-system)，在不二原版基础上将品牌色改为「森林墨（Forest Ink）」暖调知性配色，适配「莉亚学ai」自媒体创作者身份。方法和框架完全继承原版，详见 Credits。
+
+---
+
 ## Credits
 
+- 原版设计系统：**ESTHER不二 (esthersjw)** — [esthersjw/esther-design-system](https://github.com/esthersjw/esther-design-system)
 - 方法论灵感来源于 [归藏](https://github.com/guizang) 的 PPT Skill——“限制AI的自由度 = 保证输出质量”这个核心思路参考了他的设计
-- Built with [Cola](https://colaos.ai) — the first OS with a soul
+- 品牌色「森林墨（Forest Ink）」配色灵感来源于 [莉亚学ai](https://github.com/erjideshijian) 的「普通人学习AI半年」分享PPT
 
 ---
 
@@ -207,9 +157,9 @@ AI 每次做设计必须按这个顺序走：
 
 [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-本仓库采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
+本仓库基于 [esthersjw/esther-design-system](https://github.com/esthersjw/esther-design-system) 修改，遵循 CC BY-NC-SA 4.0 协议。
 
 - ✅ 可自由使用、修改、分享
-- ✅ 必须署名：ESTHER不二 (esthersjw)
+- ✅ **必须署名原作**：ESTHER不二 (esthersjw) + 莉亚学ai (erjideshijian)
 - ❌ 禁止商用
 - 🔄 修改后必须以相同协议分享

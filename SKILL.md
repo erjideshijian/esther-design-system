@@ -1,13 +1,13 @@
 ---
-name: esther-design-system
-description: 不二的个人IP设计系统。做HTML页面、个人网站、教程页面、介绍页面、landing page等任何前端设计时自动触发。包含品牌DNA和多个场景子规范。
-author: ESTHER不二 (esthersjw)
-license: CC BY-NC-SA 4.0
-repo: https://github.com/esthersjw/esther-design-system
+name: liya-design-system
+description: 莉亚学ai的个人品牌设计系统。做HTML页面、个人网站、教程页面、介绍页面、landing page等任何前端设计时自动触发。包含品牌DNA和多个场景子规范。
+author: 莉亚学ai (erjideshijian)
+license: CC BY-NC-SA 4.0 (基于 esthersjw/esther-design-system 修改)
+repo: https://github.com/erjideshijian/esther-design-system
 ---
 
-> © 2026 ESTHER不二 (esthersjw) | CC BY-NC-SA 4.0
-> 使用本 Skill 需署名原作者，禁止商用，修改后须以相同协议分享。
+> © 2026 莉亚学ai (erjideshijian) | 基于 ESTHER不二 (esthersjw) 的 esther-design-system 修改，遵循 CC BY-NC-SA 4.0 协议
+> 原作者署名：ESTHER不二 (esthersjw)，禁止商用，修改后须以相同协议分享。
 
 触发条件：当用户要求制作HTML网页、个人页面、教程页面、介绍型页面、landing page、活动页面、App型页面、作品集等任何前端设计相关任务时触发。也在用户说"做图文"、"图文卡片"、"小红书图文"、"文章转卡片"、"转成图文"、"做卡片"时触发。
 

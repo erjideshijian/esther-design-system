@@ -8,11 +8,11 @@
 
 | 用途 | 变量名 | 色值 | 说明 |
 |------|--------|------|------|
-| 主黄 | `--yellow` | `#F4D758` | 强调、装饰圆圈、连接线、badges |
-| 柔黄 | `--yellow-soft` | `#FFF3CD` | 背景块、气泡底色 |
-| 主蓝 | `--blue` | `#2B7FD8` | 英文标题、超链、重点标记 |
-| 深蓝 | `--blue-deep` | `#1E5BA8` | 大装饰字、section数字编号 |
-| 红色 | `--red` | `#E84A5F` | 点缀、高亮下划线、标签 |
+| 主色（森林绿） | `--primary` | `#2D5A3D` | 英文标题、超链、重点标记 |
+| 强调色（暖金） | `--accent` | `#E8C99B` | 强调、装饰圆圈、连接线、badges |
+| 柔金 | `--accent-soft` | `#F5E6C8` | 背景块、气泡底色 |
+| 点缀色（陶土红） | `--pop` | `#C4716B` | 点缀、高亮下划线、标签 |
+| 深绿 | `--primary-deep` | `#1E4A2E` | 大装饰字、section数字编号 |
 | 奶白底 | `--cream` | `#fefcf6` | 页面主背景 |
 | 深奶底 | `--cream-dark` | `#faf6eb` | section间交替背景 |
 | 墨色 | `--ink` | `#1A1A2E` | 正文主色（非纯黑） |
@@ -21,7 +21,7 @@
 
 ### 色彩原则
 - 绝不用纯黑 `#000` 或纯白 `#fff`——总是带暖调
-- 主色永远是暖黄+蓝，红色只做点缀
+- 主色永远是森林绿+暖金，陶土红只做点缀
 - 背景用径向渐变制造层次感，不要纯平色
 
 ---
@@ -84,13 +84,13 @@
 ## 🎭 装饰元素
 
 ### 可用的装饰手法
-- **虚线圆圈**: `border: 2.5px dashed var(--yellow); border-radius: 50%`，半透明，大尺寸做背景
+- **虚线圆圈**: `border: 2.5px dashed var(--accent); border-radius: 50%`，半透明，大尺寸做背景
 - **渐变光晕**: `radial-gradient(ellipse, rgba(255,217,61,0.18), transparent)` 做柔和背景
-- **分割线**: `linear-gradient(90deg, transparent, var(--yellow), transparent)` 1px渐隐线
+- **分割线**: `linear-gradient(90deg, transparent, var(--accent), transparent)` 1px渐隐线
 - **高亮标记**: `background: linear-gradient(180deg, transparent 50%, rgba(255,217,61,0.35) 50%)` 文字底部高亮
 - **大透明数字**: 超大字号 + `opacity: 0.12~0.2` 做section装饰
 - **SVG简笔画**: 用描边风格的简化示意图，不要写实截图
-- **底部色条**: `border-bottom: 4px solid var(--yellow/blue/red)` 给卡片加标识（禁止使用 border-left 竖线引用块）
+- **底部色条**: `border-bottom: 4px solid var(--accent/primary/pop)` 给卡片加标识（禁止使用 border-left 竖线引用块）
 
 ### 条纹肌理分割（替代渐隐线做section divider）
 ```css
@@ -100,8 +100,8 @@
     0deg,
     transparent,
     transparent 3px,
-    rgba(232, 74, 95, 0.08) 3px,
-    rgba(232, 74, 95, 0.08) 4px
+    rgba(196, 113, 107, 0.08) 3px,
+    rgba(196, 113, 107, 0.08) 4px
   );
 }
 ```
@@ -137,7 +137,7 @@
 .decorative-frame {
   position: relative;
   padding: 16px;
-  border: 2.5px dashed var(--yellow);
+  border: 2.5px dashed var(--accent);
   border-radius: 12px;
 }
 .decorative-frame::before {
@@ -186,7 +186,7 @@
 - `unobserve` after triggering（只触发一次）
 - 用 `.reveal-d1` ~ `.reveal-d5` 做 stagger（0.1s递增）
 - 尊重 `prefers-reduced-motion`
-- 选中文本高亮：`::selection { background: #F4D758; color: #1a1a1a; }`
+- 选中文本高亮：`::selection { background: #E8C99B; color: #1a1a1a; }`
 
 ### 动效原则
 - **只用 opacity + transform**，不要animate layout属性
@@ -226,11 +226,11 @@
 
 ## 🧩 可发散方向
 
-- **配色微调**: 内容跟某品牌相关时可替换主蓝为品牌色，但暖黄+奶白底不变
+- **配色微调**: 内容跟某品牌相关时可替换主色为品牌色，但暖金+奶白底不变
 - **布局组合**: 十一种布局模式自由组合
 - **装饰密度**: 轻松内容多装饰，严肃内容减少装饰只保留字体层次
 - **IP出现方式**: 不同姿势（叉腰、放大镜、坐椅子等）
-- **深色section**: 可用一个section用深色底（如 `--blue-deep`），制造节奏对比
+- **深色section**: 可用一个section用深色底（如 `--primary-deep`），制造节奏对比
 - **交互**: 如果内容适合，可加hover状态、tab切换、accordion——但不要为交互而交互
 
 ---

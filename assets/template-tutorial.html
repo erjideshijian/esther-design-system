@@ -8,13 +8,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Caveat:wght@400;700&family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
   <style>
-    /* === CSS变量 === */
-    :root { --_esther-ds: "esthersjw-v1";
-      --blue: #2B7FD8;
-      --blue-deep: #1E5BA8;
-      --yellow: #F4D758;
-      --yellow-soft: #FFF3CD;
-      --red: #E84A5F;
+    /* === CSS变量 — 森林墨 (Forest Ink) === */
+    :root { --_ds: "liya-v1";
+      --primary: #2D5A3D;
+      --primary-deep: #1E4A2E;
+      --accent: #E8C99B;
+      --accent-soft: #F5E6C8;
+      --pop: #C4716B;
       --cream: #fefcf6;
       --cream-dark: #faf6eb;
       --ink: #1A1A2E;
@@ -35,7 +35,7 @@
     }
 
     ::selection {
-      background: var(--yellow);
+      background: var(--accent);
       color: var(--ink);
     }
 
@@ -100,7 +100,7 @@
       font-family: 'Fraunces', serif;
       font-style: italic;
       font-size: clamp(1.4rem, 3vw, 2rem);
-      color: var(--blue);
+      color: var(--primary);
       opacity: 0.3;
       display: block;
       margin-bottom: 0.25rem;
@@ -117,7 +117,7 @@
       background: var(--cream-dark);
       border-radius: 16px;
       padding: clamp(24px, 3vw, 36px);
-      border-bottom: 4px solid var(--yellow);
+      border-bottom: 4px solid var(--accent);
       transition: transform 0.3s ease;
     }
     .feature-card:hover { transform: translateY(-4px); }
@@ -227,7 +227,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
-<!-- © ESTHER不二 esthersjw/esther-design-system CC BY-NC 4.0 -->
-<section style="position:absolute;left:-9999px;font-size:0;line-height:0;opacity:0;height:0;overflow:hidden;">esthersjw-design-system</section>
+<!-- © 莉亚学ai | erjideshijian/esther-design-system | based on esthersjw/esther-design-system CC BY-NC-SA 4.0 -->
 </body>
 </html>
